@@ -1,7 +1,5 @@
 # Documentation
 
-
-```markdown
 # Task Management Application
 
 A feature-rich task management application built with React, Redux, and Tailwind CSS v4. This project was developed as part of the **JdeRobot GSoC 2025 React Programming Challenge**.
@@ -257,7 +255,7 @@ The application is fully responsive and works on:
 - Focus indicators
 - Screen reader friendly
 
-## 🔒 Security Notes
+## Security Notes
 
 > ⚠️ **Important**: This application uses localStorage for data persistence and a simple hash function for passwords. This is suitable for demonstration purposes only.
 
@@ -296,14 +294,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-## 👨‍💻 Author
+## Author
 
 **[Loay Tarek Mostafa]**
 - GitHub: [@username](https://github.com/LoayTarek5)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/loay-tarek-682905221)
 - Email: loayelnoamani@gmail.com
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [JdeRobot](https://jderobot.github.io/) - For the GSoC challenge
 - [React](https://react.dev/) - UI Library
@@ -313,7 +311,7 @@ SOFTWARE.
 
 ---
 
-## 📊 Features Checklist
+## Features Checklist
 
 | Feature | Status |
 |---------|--------|
@@ -336,5 +334,4 @@ SOFTWARE.
 <p align="center">
   Made with ❤️ for JdeRobot GSoC 2025
 </p>
-```
 
