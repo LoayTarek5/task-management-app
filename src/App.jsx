@@ -62,7 +62,6 @@ const App = () => {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
-                  <span className="text-3xl">✅</span>
                   <span className="hidden sm:inline">Task Manager</span>
                 </h1>
 
