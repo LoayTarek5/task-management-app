@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+/* ===== Custom Theme (Tailwind v4 way) ===== */
+@theme {
+  /* Custom Colors */
+  --color-priority-high: #ef4444;
+  --color-priority-medium: #f59e0b;
+  --color-priority-low: #22c55e;
+
+  --color-category-personal: #8b5cf6;
+  --color-category-work: #3b82f6;
+  --color-category-groceries: #10b981;
+  --color-category-health: #ec4899;
+
+  /* Custom Animations */
+  --animate-fade-in: fade-in 0.3s ease-in-out;
+  --animate-slide-in: slide-in 0.3s ease-out;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in {
+    from {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+/* ===== Base Styles ===== */
+@layer base {
+  body {
+    @apply bg-gray-100 text-gray-900 antialiased;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* ===== Component Classes ===== */
+@layer components {
+  /* Buttons - All styles inlined (no @apply with custom classes) */
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 
+           focus:outline-none focus:ring-2 focus:ring-offset-2 
+           disabled:opacity-50 disabled:cursor-not-allowed
+           cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 
+           focus:outline-none focus:ring-2 focus:ring-offset-2 
+           disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer
+           bg-blue-600 text-white hover:bg-blue-700 
+           focus:ring-blue-500 active:bg-blue-800;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 
+           focus:outline-none focus:ring-2 focus:ring-offset-2 
+           disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer
+           bg-gray-200 text-gray-700 hover:bg-gray-300 
+           focus:ring-gray-500;
+  }
+
+  .btn-danger {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 
+           focus:outline-none focus:ring-2 focus:ring-offset-2 
+           disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer
+           bg-red-600 text-white hover:bg-red-700 
+           focus:ring-red-500;
+  }
+
+  .btn-icon {
+    @apply p-2 rounded-lg hover:bg-gray-100 transition-colors 
+           focus:outline-none focus:ring-2 focus:ring-blue-500
+           cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Form Inputs */
+  .input {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg 
+           focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
+           placeholder-gray-400 transition-all duration-200 bg-white;
+  }
+
+  .select {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg 
+           focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
+           placeholder-gray-400 transition-all duration-200
+           appearance-none bg-white cursor-pointer pr-8;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-size: 0.65em;
+    background-position: right 0.7rem center;
+    background-repeat: no-repeat;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white rounded-xl shadow-md p-4 transition-shadow duration-300
+           hover:shadow-lg;
+  }
+
+  .task-card {
+    @apply bg-white rounded-xl shadow-md p-4 transition-shadow duration-300
+           hover:shadow-lg border-l-4;
+    animation: fade-in 0.3s ease-in-out;
+  }
+
+  /* Priority Badges */
+  .badge {
+    @apply px-2 py-1 text-xs font-semibold rounded-full;
+  }
+
+  .badge-high {
+    @apply px-2 py-1 text-xs font-semibold rounded-full 
+           bg-red-100 text-red-700;
+  }
+
+  .badge-medium {
+    @apply px-2 py-1 text-xs font-semibold rounded-full 
+           bg-yellow-100 text-yellow-700;
+  }
+
+  .badge-low {
+    @apply px-2 py-1 text-xs font-semibold rounded-full 
+           bg-green-100 text-green-700;
+  }
+
+  /* Category Badges */
+  .badge-personal {
+    @apply px-2 py-1 text-xs font-semibold rounded-full 
+           bg-purple-100 text-purple-700;
+  }
+
+  .badge-work {
+    @apply px-2 py-1 text-xs font-semibold rounded-full 
+           bg-blue-100 text-blue-700;
+  }
+
+  .badge-groceries {
+    @apply px-2 py-1 text-xs font-semibold rounded-full 
+           bg-emerald-100 text-emerald-700;
+  }
+
+  .badge-health {
+    @apply px-2 py-1 text-xs font-semibold rounded-full 
+           bg-pink-100 text-pink-700;
+  }
+
+  /* Filter Buttons */
+  .filter-btn {
+    @apply px-3 py-1.5 text-sm font-medium rounded-full 
+           transition-all duration-200 hover:bg-gray-100 cursor-pointer;
+  }
+
+  .filter-btn-active {
+    @apply px-3 py-1.5 text-sm font-medium rounded-full 
+           transition-all duration-200 cursor-pointer
+           bg-blue-600 text-white hover:bg-blue-700;
+  }
+}
+
+/* ===== Utilities ===== */
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
